@@ -11,16 +11,33 @@
       <h1>Sign-up</h1>
       <p>Sign up to get your health back on track</p>
       <div id="inputs">
-        <input type="text" id="username" placeholder="Enter username" />
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter username"
+          oninput="vaildateUsername()"
+        />
         <p id="userfeedback"></p>
-        <input type="email" id="email" placeholder="Enter your email" />
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          oninput="vaildateEmail()"
+        />
         <p id="emailfeedback"></p>
-        <input type="text" id="password" placeholder="Create Password" />
+        <input
+          type="text"
+          id="password"
+          placeholder="Create Password"
+          oninput="vaildatePassword()"
+        />
         <p id="passwordfeedback"></p>
         <input
           type="text"
           id="confirmpassword"
           placeholder="Confirm Password"
+          style="display: none"
+          oninput="vaildatePassword()"
         />
         <p id="confirmpwfeedback"></p>
       </div>
