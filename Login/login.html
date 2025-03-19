@@ -9,13 +9,24 @@
   <body>
     <div class="wrapper">
       <h1>Login</h1>
-      <input type="email" placeholder="Enter Email" id="loginemail" />
+      <input
+        type="email"
+        placeholder="Enter Email"
+        id="loginemail"
+        oninput="emailLogin()"
+      />
       <p id="login-emailfeedback"></p>
-      <input type="text" placeholder="Enter password" id="loginpassword" />
+      <input
+        type="text"
+        placeholder="Enter password"
+        id="loginpassword"
+        oninput="passwordInput()"
+      />
       <p id="login-passwordfeedback"></p>
     </div>
     <button id="loginbtn">Login</button>
     <button id="forgotpassword">Forgot Password</button>
+    <p id="feedback"></p>
     <script src="login.js"></script>
   </body>
 </html>
