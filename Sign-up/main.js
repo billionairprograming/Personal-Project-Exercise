@@ -1,4 +1,5 @@
 //varibales
+//Signup page 1
 const username = document.getElementById("username");
 const userFeedback = document.getElementById("userfeedback");
 const email = document.getElementById("email");
@@ -90,7 +91,7 @@ function saveData() {
   localStorage.setItem("userInfo", JSON.stringify(userInfo));
   alert("Almost there!");
 
-  window.location.href = "sign-up2.html";
+  window.location.href = "../Signinpage2/sign-up2.html";
 }
 
 //eventlisterns and inits

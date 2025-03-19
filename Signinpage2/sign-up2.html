@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Info login</title>
+  </head>
+  <body>
+    <div>
+      <h1>Body Information</h1>
+      <p>Input your body information</p>
+      <form>
+        <input
+          type="text"
+          placeholder="Input your age"
+          id="age"
+          oninput="validateAge() "
+        />
+        <p id="agefeedback"></p>
+        <label for="gender">Select your gender</label>
+        <select id="gender" name="gender" oninput="validateGender()">
+          <option value="" disabled selected>Select your gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <p id="genderfeedback"></p>
+        <br />
+        <input
+          type="text"
+          placeholder="Input your height"
+          id="height"
+          oninput="vaildateHeight()"
+        />
+        <p id="heightfeedback"></p>
+        <input
+          type="text"
+          placeholder="Input your weight"
+          id="weight"
+          oninput="validateWeight()"
+        />
+        <p id="weightfeedback"></p>
+      </form>
+      <button id="bodysubmit">Submit</button>
+    </div>
+    <script src="signup2.js"></script>
+  </body>
+</html>
