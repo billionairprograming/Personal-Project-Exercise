@@ -5,21 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logged in</title>
     <link href="Logged-in.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
+  <!--
+    {} Add in the other Ids
+  -->
   <body>
     <div class="wrapper">
       <div>
-        <img />
-        <button>Select Workout</button>
+        <img src="https://placehold.co/600x400" />
+        <button id="selectworkout">Select Workouts</button>
       </div>
       <section>
         <div>
           <h1>Preview Workouts</h1>
-          <div></div>
-          <button>Start workout</button>
+          <div>
+            <p>UpperBody</p>
+            <p id="upperbodyselected"></p>
+            <p>Lower Body</p>
+            <p id="lowerbodyselected"></p>
+          </div>
+          <button id="startworkout">Start workout</button>
         </div>
       </section>
     </div>
+    <dialog id="selectBodyPartModalContainer">
+      <div>
+        <h4 id="selectedBodyPartsContainer"></h4>
+        <h2>Upper body</h2>
+        <div id="upperBodySelectionContainer"></div>
+        <h2>Lower Body</h2>
+        <div id="lowerBodySelectionContainer"></div>
+      </div>
+      <button autofocus id="closeSelectBodyPartsModalContainer">Close</button>
+    </dialog>
+
+    <!--
+    This is for the modual that will pop up 
+    Should I just append each body part 
+    
+    -->
+    <!-- <div>
+      <h2>Upper body</h2>
+      <select id="upperBodyDropdown">
+        <option value="">please select</option>
+      </select>
+      <h2>Lower Body</h2>
+      <select id="lowerBodyDropdown">
+        <option value="">please select</option>
+      </select>
+    </div> -->
+
     <script src="Logged-in.js"></script>
   </body>
 </html>
