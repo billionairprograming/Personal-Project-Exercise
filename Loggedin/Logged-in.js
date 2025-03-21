@@ -84,8 +84,6 @@ selectWorkout.onclick = function () {
   selectBodyPartModalContainer.showModal();
 
   // Clear containers first to avoid duplicates
-  upperBodySelectionContainer.innerHTML = "";
-  lowerBodySelectionContainer.innerHTML = "";
 
   upper.forEach((upperBodyPart) => {
     upperBodySelectionContainer.appendChild(selectionMaker(upperBodyPart));
@@ -112,6 +110,9 @@ closeSelectBodyPartsModalContainer.onclick = async function () {
   upperBodySelected.appendChild(pre);
 
   selectBodyPartModalContainer.close();
+
+  upperBodySelectionContainer.innerHTML = "";
+  lowerBodySelectionContainer.innerHTML = "";
 };
 
 // API Request for Exercises
@@ -141,23 +142,3 @@ startWorkoutBtn.addEventListener("click", function () {
 });
 
 // Show Selected Body Parts on Another Page
-window.addEventListener("DOMContentLoaded", function () {
-  const selectedBodyPartsDisplay = document.getElementById(
-    "selectedBodyPartsDisplay"
-  );
-
-  if (selectedBodyPartsDisplay) {
-    const selectedParts =
-      JSON.parse(localStorage.getItem("selectedBodyParts")) || [];
-
-    if (selectedParts.length === 0) {
-      selectedBodyPartsDisplay.textContent = "No body parts selected yet!";
-    } else {
-      selectedParts.forEach((part) => {
-        const div = document.createElement("div");
-        div.textContent = part;
-        selectedBodyPartsDisplay.appendChild(div);
-      });
-    }
-  }
-});

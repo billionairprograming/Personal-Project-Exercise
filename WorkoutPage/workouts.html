@@ -11,6 +11,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -29,7 +30,6 @@
         </p>
         <div style="min-height: 120px">
           <div class="collapse collapse-horizontal" id="collapseWidthExample1">
-            <h1>Your Selected Body Parts</h1>
             <div id="selectedBodyPartsDisplay"></div>
           </div>
         </div>
@@ -47,10 +47,7 @@
         </p>
         <div style="min-height: 120px">
           <div class="collapse collapse-horizontal" id="collapseWidthExample">
-            <div class="card card-body" style="width: 300px">
-              This is some placeholder content for a horizontal collapse. It's
-              hidden by default and shown when triggered.
-            </div>
+            <div id="selectedBodyPartsDisplay"></div>
           </div>
         </div>
       </header>
@@ -72,5 +69,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="workouts.js"></script>
+    <script src="../Loggedin/Logged-in.js"></script>
   </body>
 </html>
