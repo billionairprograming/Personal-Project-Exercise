@@ -109,6 +109,16 @@ closeSelectBodyPartsModalContainer.onclick = async function () {
   pre.textContent = JSON.stringify(exercises, null, 2);
   upperBodySelected.appendChild(pre);
 
+  const userInfo = JSON.parse(localStorage.getItem("userInfo")) || {};
+
+  userInfo.userWorkouts = {
+    upper: selectedBodyParts.filter((part) => upper.includes(part)),
+    lower: selectedBodyParts.filter((part) => lower.includes(part)),
+    exercises: exercises,
+  };
+
+  localStorage.setItem("userInfo", JSON.stringify(userInfo));
+
   selectBodyPartModalContainer.close();
 
   upperBodySelectionContainer.innerHTML = "";
@@ -130,15 +140,8 @@ async function getExercisesByBodyPart(bodyPartName) {
 
 // Start Workout Button — Navigates to New Page
 startWorkoutBtn.addEventListener("click", function () {
-  const userInfo = JSON.parse(localStorage.getItem("userInfo")) || {};
-
-  userInfo.userWorkouts = {
-    upper: selectedBodyParts.filter((part) => upper.includes(part)),
-    lower: selectedBodyParts.filter((part) => lower.includes(part)),
-  };
-
-  localStorage.setItem("userInfo", JSON.stringify(userInfo));
   window.location.href = "../WorkoutPage/workouts.html";
 });
 
 // Show Selected Body Parts on Another Page
+//save exercise data to local storage
