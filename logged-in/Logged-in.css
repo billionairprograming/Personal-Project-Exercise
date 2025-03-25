@@ -13,6 +13,7 @@ img {
   text-align: center;
   position: relative;
   border-radius: 5px;
+  box-shadow: 5px 5px 5px 5px red;
 }
 
 #selectworkout {

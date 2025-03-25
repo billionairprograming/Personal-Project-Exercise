@@ -29,6 +29,12 @@ window.addEventListener("DOMContentLoaded", function () {
       selectedParts.forEach((part) => {
         const button = document.createElement("button");
         button.textContent = part;
+        button.style.color = "white";
+        button.style.backgroundColor = "red";
+        button.style.border = "none";
+        button.style.boxShadow = "1px 2px 11px 5px;";
+        button.style.borderRadius = "5px";
+
         selectedBodyPartsDisplay.appendChild(button);
         button.onclick = function () {
           bodyParts = [part];

@@ -52,7 +52,7 @@ loginBtn.addEventListener("click", function () {
     feedback.style.color = "red";
   } else {
     feedback.textContent = "";
-    window.location.href = "../Loggedin/Logged-in.html";
+    window.location.href = "../Login/login.html";
   }
 });
 
