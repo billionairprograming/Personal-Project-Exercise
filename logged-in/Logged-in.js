@@ -51,6 +51,9 @@ function selectionMaker(bodyPart) {
   const button = document.createElement("button");
   button.textContent = bodyPart;
   button.setAttribute("data-bodypart", bodyPart);
+  button.style.color = "white";
+  button.style.backgroundColor = "red";
+  button.style.border = "none";
 
   // Add 'selected' class for selected parts
   if (selectedBodyParts.includes(bodyPart)) {
@@ -62,10 +65,14 @@ function selectionMaker(bodyPart) {
 
     if (selectBodyIndex !== -1) {
       selectedBodyParts.splice(selectBodyIndex, 1);
-      button.classList.remove("selected"); // Deselect
+      button.classList.remove("selected");
+      button.style.color = "white";
+      button.style.backgroundColor = "red"; // Deselect
     } else {
       selectedBodyParts.push(bodyPart);
-      button.classList.add("selected"); // Select
+      button.classList.add("selected");
+      button.style.color = "white";
+      button.style.backgroundColor = "red"; // Select
     }
 
     // Update display and save data
@@ -105,9 +112,35 @@ closeSelectBodyPartsModalContainer.onclick = async function () {
   }
 
   console.log(exercises);
-  const pre = document.createElement("pre");
-  pre.textContent = JSON.stringify(exercises, null, 2);
-  upperBodySelected.appendChild(pre);
+
+  Object.keys(exercises).forEach((bodyPart) => {
+    // Create a header for the body part
+    const bodyPartHeader = document.createElement("h3");
+    bodyPartHeader.textContent = bodyPart.toUpperCase(); // Display body part name
+    bodyPartHeader.style.color = "white";
+    upperBodySelected.appendChild(bodyPartHeader);
+
+    // Get the exercises for this body part and extract their names
+    const exerciseNames = exercises[bodyPart].map((exercise) => exercise.name);
+
+    // Create a list of exercise names
+    const exerciseList = document.createElement("ul");
+    exerciseNames.forEach((name) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = name;
+      listItem.style.color = "white"; // Display the exercise name
+      exerciseList.appendChild(listItem);
+    });
+
+    upperBodySelected.appendChild(exerciseList); // Append the list to the container
+  });
+
+  //const exerciseName = exercises.map((exercise) => exercise.name);
+  //const div = document.createElement("div");
+  //div.textContent = exerciseName;
+  //upperBodySelected.appendChild(div);
+
+  //const string = JSON.stringify(exercises, null, 2);
 
   const userInfo = JSON.parse(localStorage.getItem("userInfo")) || {};
 
@@ -129,15 +162,18 @@ closeSelectBodyPartsModalContainer.onclick = async function () {
 async function getExercisesByBodyPart(bodyPartName) {
   try {
     const res = await axios.get(`/api/v1/bodyparts/${bodyPartName}/exercises`);
+    const exercises = res.data?.data?.exercises ?? [];
+    const exerciseName = exercises.map((exercise) => exercise.name);
+    console.log("name =", exerciseName);
     return {
-      [bodyPartName]: res.data?.data?.exercises ?? [],
+      [bodyPartName]: exercises,
     };
   } catch (error) {
     console.error(`Error fetching exercises for ${bodyPartName}:`, error);
     return { [bodyPartName]: [] };
   }
 }
-
+console.log("name=", getExercisesByBodyPart().name);
 // Start Workout Button — Navigates to New Page
 startWorkoutBtn.addEventListener("click", function () {
   window.location.href = "../WorkoutPage/workouts.html";

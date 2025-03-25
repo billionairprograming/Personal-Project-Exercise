@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Info login</title>
+    <link href="signup2.css" rel="stylesheet" />
   </head>
   <body>
-    <div>
+    <div id="wrapper">
       <h1>Body Information</h1>
       <p>Input your body information</p>
       <form>
@@ -17,7 +18,6 @@
           oninput="validateAge() "
         />
         <p id="agefeedback"></p>
-        <label for="gender">Select your gender</label>
         <select id="gender" name="gender" oninput="validateGender()">
           <option value="" disabled selected>Select your gender</option>
           <option value="male">Male</option>

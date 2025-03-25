@@ -1,0 +1,27 @@
+body {
+  background-color: black;
+}
+
+#wrapper {
+  width: 60vw;
+  height: auto;
+  border: 1px solid black;
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin-inline: auto;
+  margin-top: 20%;
+  padding-top: 9vh;
+  border-radius: 10%;
+  box-shadow: 5px 5px 5px 5px red;
+}
+
+button {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  height: 30px;
+  width: 80px;
+}

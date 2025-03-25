@@ -144,7 +144,7 @@ function displayExercises() {
     stepDiv.appendChild(eachStepDiv);
   }
 
-  equipmentDiv.textContent = current.equipmentDiv;
+  equipmentDiv.textContent = current.equipments;
   targetDiv.textContent = current.targetMuscles;
 
   console.log("allExercises =", allExercises);
@@ -180,7 +180,7 @@ nextButton.addEventListener("click", function () {
     stepDiv.appendChild(eachStepDiv);
   }
 
-  equipmentDiv.textContent = current.equipmentDiv;
+  equipmentDiv.textContent = current.equipments;
   targetDiv.textContent = current.targetMuscles;
 
   // displayExercises();
@@ -200,11 +200,10 @@ prevButton.addEventListener("click", function () {
 finishButton.addEventListener("click", function () {
   selectedBodyPartsDisplay.innerHTML = "";
   console.log(localStorage.getItem("userInfo"));
-  localStorage.removeItem("userInfo", "userWorkouts", "selectedBodyParts");
+  localStorage.removeItem("userInfo", "userWorkouts");
+  localStorage.removeItem("selectedBodyParts");
+
   console.log("local storage", localStorage);
 
-  window.location.href = "../Loggedin/Logged-in.html";
+  window.location.href = "../logged-in/index.html";
 });
-
-//bug report all the steps are being displayed at once instead of one at a time
-//bug the last targert muscle is being displayed instead of the current one

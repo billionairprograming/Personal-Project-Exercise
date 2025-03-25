@@ -17,7 +17,9 @@
           placeholder="Enter username"
           oninput="vaildateUsername()"
         />
+        <!--Add ul for better readablity-->
         <p id="userfeedback"></p>
+
         <input
           type="email"
           id="email"
@@ -25,6 +27,15 @@
           oninput="vaildateEmail()"
         />
         <p id="emailfeedback"></p>
+        <!-- <div id="passwordContainer">
+          <input
+            type="text"
+            id="password"
+            placeholder="Create Password"
+            oninput="vaildatePassword()"
+          />
+          <button id="passwordVisible">show</button>
+        </div> -->
         <input
           type="text"
           id="password"
@@ -44,5 +55,21 @@
       <button id="signup-submit">Submit</button>
     </div>
     <script src="main.js"></script>
+    <!-- <script>
+      passwordVisible.onclick = function () {
+        console.log("HELLO WORLD");
+        const password = document.getElementById("password");
+        const type = password.type;
+        const val = password.value;
+        password.remove();
+        const input = document.createElement("input");
+        input.id = "password";
+        input.value = val;
+        input.type = type === "text" ? "password" : "text";
+        input.placeholder = "Create Password";
+        input.oninput = vaildatePassword;
+        passwordContainer.prepend(input);
+      };
+    </script> -->
   </body>
 </html>

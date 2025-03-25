@@ -1,5 +1,80 @@
+.wrapper {
+  border: 1px black solid;
+  text-align: center;
+  margin-top: 50px;
+  margin-inline: auto;
+  background-color: black;
+  color: white;
+}
+
 #exerciseDisplay {
   border: 1px solid black;
-  height: 200px;
-  width: 200px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 60vw;
+  margin-inline: auto;
+  background-color: #c71414;
+  border-radius: 15px;
+}
+
+#steps {
+  margin: 50px;
+  margin-bottom: 75px;
+}
+
+#equipment {
+  width: fit-content;
+  border: 1px black solid;
+  position: absolute;
+  top: 88%;
+  left: 20px;
+  border-radius: 5px;
+}
+
+#target {
+  width: fit-content;
+  border: 1px black solid;
+  position: absolute;
+  top: 88%;
+  left: 78%;
+  border-radius: 5px;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 30px;
+  margin-inline: auto;
+}
+
+#prevBtn {
+  position: absolute;
+  margin-left: 140px;
+  border: none;
+  width: 70px;
+  border-radius: 20px;
+  background-color: red;
+  color: white;
+}
+
+#nextBtn {
+  position: absolute;
+  right: 140px;
+  border: none;
+  width: 70px;
+  border-radius: 20px;
+  background-color: red;
+  color: white;
+}
+
+#finishBtn {
+  margin-top: 40px;
+  border: none;
+  border-radius: 20px;
+  width: 150px;
+  margin-inline: auto;
+  background-color: red;
+  color: white;
 }

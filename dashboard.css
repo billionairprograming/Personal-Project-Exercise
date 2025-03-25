@@ -1,0 +1,34 @@
+body {
+}
+
+.wrapper {
+  width: 95vw;
+  margin: 0 auto;
+  font-family: Arial;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+
+#carouselExampleIndicators {
+  width: 70vw;
+  margin-inline: auto;
+  height: 35vh;
+}
+
+.imgsizing {
+  height: 35vh;
+}
+
+#services {
+  margin-top: 15px;
+  height: 25vh;
+}
+
+#aboutsection {
+  height: 25vh;
+}
+
+.footersection {
+  height: 10vh;
+}

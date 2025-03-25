@@ -1,0 +1,48 @@
+body {
+  background-color: black;
+}
+img {
+  width: 100%;
+}
+
+.wrapper {
+  margin-top: 90px;
+  width: 60vw;
+  margin-inline: auto;
+  border: 1px white solid;
+  text-align: center;
+  position: relative;
+  border-radius: 5px;
+}
+
+#selectworkout {
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+}
+
+h1 {
+  color: white;
+}
+
+#startworkout {
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+}
+
+#selectBodyPartModalContainer {
+  background-color: black;
+  color: white;
+}
+
+#closeSelectBodyPartsModalContainer {
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+}
